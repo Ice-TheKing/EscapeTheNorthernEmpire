@@ -6,6 +6,8 @@ TextureImporter:
     21300002: spriteSheet(Transparency)_1
     21300004: spriteSheet(Transparency)_2
     21300006: spriteSheet(Transparency)_3
+    21300008: Jump0
+    21300010: Jump1
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -163,6 +165,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b895f46a8aaa1ed4796cb235c939eac4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump0
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 368
+        width: 63
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3603b6d0955eb488c7501214705545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jump1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 368
+        width: 63
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b612e799b1cd6442b00f1c3ace43b23
       vertices: []
       indices: 
       edges: []
