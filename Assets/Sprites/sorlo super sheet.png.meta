@@ -196,81 +196,21 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walk0
+      name: sorlo super sheet_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 459
-        width: 72
-        height: 72
+        x: 0
+        y: 0
+        width: 1175
+        height: 635
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88bd2dc85275be7458e847aab2cc1492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk1
-      rect:
-        serializedVersion: 2
-        x: 106
-        y: 459
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9489737b762b27d4d8c5ee48164dcfd9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk2
-      rect:
-        serializedVersion: 2
-        x: 187
-        y: 459
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e6000a9b5061b24291cca2c5e1d4361
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk3
-      rect:
-        serializedVersion: 2
-        x: 265
-        y: 459
-        width: 72
-        height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0953e9fb7a8479b4aa22a65dfa5aaf40
+      spriteID: ec352619f97cac140b12bf583028b7b7
       vertices: []
       indices: 
       edges: []

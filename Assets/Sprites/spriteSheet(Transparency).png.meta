@@ -2,12 +2,17 @@ fileFormatVersion: 2
 guid: c13bd90eeabe4864d85345b641dd910e
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spriteSheet(Transparency)_0
-    21300002: spriteSheet(Transparency)_1
-    21300004: spriteSheet(Transparency)_2
-    21300006: spriteSheet(Transparency)_3
+    21300000: Walk0
+    21300002: Walk1
+    21300004: Walk2
+    21300006: Walk3
     21300008: Jump0
     21300010: Jump1
+    21300012: Levitate0
+    21300014: Levitate1
+    21300016: Levitate2
+    21300018: Levitate3
+    21300020: Levitate4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -90,7 +95,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spriteSheet(Transparency)_0
+      name: Walk0
       rect:
         serializedVersion: 2
         x: 25
@@ -110,7 +115,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet(Transparency)_1
+      name: Walk1
       rect:
         serializedVersion: 2
         x: 106
@@ -130,7 +135,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet(Transparency)_2
+      name: Walk2
       rect:
         serializedVersion: 2
         x: 187
@@ -150,7 +155,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spriteSheet(Transparency)_3
+      name: Walk3
       rect:
         serializedVersion: 2
         x: 265
@@ -205,6 +210,106 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2b612e799b1cd6442b00f1c3ace43b23
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Levitate0
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 465
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb47d41d382c6db46b9eb7d98cc75aea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Levitate1
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 464
+        width: 64
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17bc212c594606b4caf5fe85733e4efa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Levitate2
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 462
+        width: 103
+        height: 75
+      alignment: 9
+      pivot: {x: 0.2807137, y: 0.5441809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea8b84c643b23b14f8448b8e348f7583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Levitate3
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 462
+        width: 132
+        height: 75
+      alignment: 9
+      pivot: {x: 0.24260874, y: 0.4665149}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e6e83ecea0e434fa6b5255b5e6c428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Levitate4
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 457
+        width: 110
+        height: 75
+      alignment: 9
+      pivot: {x: 0.33500645, y: 0.46574423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8acb4c53af555494fa0b78820e9bfcfa
       vertices: []
       indices: 
       edges: []
