@@ -27,7 +27,7 @@ AnimatorState:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: playerAnim
+  m_Name: walkRight
   m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions: []
@@ -106,20 +106,20 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102136267635547610}
-    m_Position: {x: -96, y: 288, z: 0}
+    m_Position: {x: -132, y: 288, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102619860404668236}
-    m_Position: {x: 192, y: 288, z: 0}
+    m_Position: {x: 168, y: 288, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102292372948891230}
-    m_Position: {x: 48, y: 384, z: 0}
+    m_Position: {x: 24, y: 384, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_AnyStatePosition: {x: 36, y: 12, z: 0}
+  m_EntryPosition: {x: 36, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1102136267635547610}

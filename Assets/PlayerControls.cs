@@ -20,14 +20,20 @@ public class PlayerControls : MonoBehaviour {
 		if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(Vector2.left * BASIC_SCALING_FACTOR * MoveSpeed);
+            transform.localScale = new Vector3(-1, 1);
         }
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(Vector2.right * BASIC_SCALING_FACTOR * MoveSpeed);
+            transform.localScale = new Vector3(1, 1);
         }
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector2.up * BASIC_SCALING_FACTOR * JumpSpeed);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("I'm a firin' mah lazor");
         }
 	}
 }
