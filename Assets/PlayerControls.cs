@@ -41,7 +41,7 @@ public class PlayerControls : MonoBehaviour
         {
             var target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
             var relativeTarget = target - transform.position;
-            var angle = Mathf.Atan2(relativeTarget.y, relativeTarget.x);
+            var angle = Mathf.Atan2(relativeTarget.y, relativeTarget.x) * Mathf.Rad2Deg;
             var direction = Quaternion.AngleAxis(angle, Vector3.forward);
             var bullet = Instantiate(ForceShot, transform.position, direction);
             Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
