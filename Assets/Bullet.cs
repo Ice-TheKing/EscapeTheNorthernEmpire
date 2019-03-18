@@ -22,4 +22,12 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Destructible") {
+            Destroy(collision.gameObject);
+        }
+        Destroy(gameObject);
+    }
 }
