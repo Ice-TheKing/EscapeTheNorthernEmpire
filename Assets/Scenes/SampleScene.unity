@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 1171105870}
   m_Layer: 0
   m_Name: groundPlatform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 2100672291}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -568,6 +568,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 1
   JumpSpeed: 20
+  ForceShot: {fileID: 114247208180742120, guid: dd7a033a3c8d2974583c6d33d4b1f92a,
+    type: 2}
 --- !u!61 &2100672291
 BoxCollider2D:
   m_ObjectHideFlags: 0
