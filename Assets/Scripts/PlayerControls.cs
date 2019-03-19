@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerControls : MonoBehaviour
@@ -8,6 +9,10 @@ public class PlayerControls : MonoBehaviour
 
     public float MoveSpeed = 1.0f;
     public float JumpSpeed = 10.0f;
+
+    public float coolDown = 0.0f;
+
+    public bool intelCollected = false;
 
     public Bullet ForceShot;
 
@@ -22,6 +27,12 @@ public class PlayerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check cool downs and decrease them as necessary
+        if(coolDown > 0)
+        {
+            coolDown -= Time.deltaTime;
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             rb.AddForce(Vector2.left * BASIC_SCALING_FACTOR * MoveSpeed);
@@ -32,9 +43,16 @@ public class PlayerControls : MonoBehaviour
             rb.AddForce(Vector2.right * BASIC_SCALING_FACTOR * MoveSpeed);
             transform.localScale = new Vector3(1, 1);
         }
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) && coolDown <= 0)
         {
             rb.AddForce(Vector2.up * BASIC_SCALING_FACTOR * JumpSpeed);
+            coolDown = .5f;
+        }
+
+        //restart level cheat
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         if (Input.GetMouseButtonDown(1))
