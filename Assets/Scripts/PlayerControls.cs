@@ -35,6 +35,9 @@ public class PlayerControls : MonoBehaviour
         if(coolDown > 0)
         {
             coolDown -= Time.deltaTime;
+        } else {
+            // jump is over so stop the animation
+            anim.SetBool("Jumping", false);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -51,6 +54,9 @@ public class PlayerControls : MonoBehaviour
         {
             rb.AddForce(Vector2.up * BASIC_SCALING_FACTOR * JumpSpeed);
             coolDown = .5f;
+
+            // start jumping animation
+            anim.SetBool("Jumping", true);
         }
 
         //restart level cheat
@@ -61,12 +67,18 @@ public class PlayerControls : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
+            Vector2 spawnPosition = transform.position;
+            spawnPosition.y += .2f;
+
             var target = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -Camera.main.transform.position.z));
             var relativeTarget = target - transform.position;
             var angle = Mathf.Atan2(relativeTarget.y, relativeTarget.x) * Mathf.Rad2Deg;
             var direction = Quaternion.AngleAxis(angle, Vector3.forward);
-            var bullet = Instantiate(ForceShot, transform.position, direction);
+            var bullet = Instantiate(ForceShot, spawnPosition, direction);
             Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+
+            // set animator to trigger the push animation
+            anim.SetTrigger("Push");
         }
 
         // check speed and feed the result into the animator so it can choose an animation
