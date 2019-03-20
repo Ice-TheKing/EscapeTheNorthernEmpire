@@ -18,10 +18,14 @@ public class PlayerControls : MonoBehaviour
 
     Rigidbody2D rb;
 
+    // animator
+    Animator anim;
+
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,6 +68,9 @@ public class PlayerControls : MonoBehaviour
             var bullet = Instantiate(ForceShot, transform.position, direction);
             Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
         }
+
+        // check speed and feed the result into the animator so it can choose an animation
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 }
 

@@ -13,6 +13,7 @@ TextureImporter:
     21300016: Levitate2
     21300018: Levitate3
     21300020: Levitate4
+    21300022: Idle
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -310,6 +311,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8acb4c53af555494fa0b78820e9bfcfa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 284
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6332098fed6569d4cb0d2250cbb37233
       vertices: []
       indices: 
       edges: []
