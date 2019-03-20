@@ -15,7 +15,6 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawLine(transform.position, transform.position + transform.right);
         Lifetime -= Time.deltaTime;
         if (Lifetime < 0)
         {
