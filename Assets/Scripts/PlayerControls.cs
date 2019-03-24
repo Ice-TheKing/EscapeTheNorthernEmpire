@@ -42,6 +42,14 @@ public class PlayerControls : MonoBehaviour
         } else {
             // jump is over so stop the animation
             anim.SetBool("Jumping", false);
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
+            {
+                rb.AddForce(Vector2.up * BASIC_SCALING_FACTOR * JumpSpeed);
+                jumpCoolDown = JumpCoolDown;
+
+                // start jumping animation
+                anim.SetBool("Jumping", true);
+            }
         }
 
         if (shotCoolDown > 0)
@@ -77,22 +85,12 @@ public class PlayerControls : MonoBehaviour
             rb.AddForce(Vector2.right * BASIC_SCALING_FACTOR * MoveSpeed);
             transform.localScale = new Vector3(1, 1);
         }
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space) && jumpCoolDown <= 0)
-        {
-            rb.AddForce(Vector2.up * BASIC_SCALING_FACTOR * JumpSpeed);
-            jumpCoolDown = JumpCoolDown;
-
-            // start jumping animation
-            anim.SetBool("Jumping", true);
-        }
 
         //restart level cheat
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-
-        
 
         // check speed and feed the result into the animator so it can choose an animation
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
