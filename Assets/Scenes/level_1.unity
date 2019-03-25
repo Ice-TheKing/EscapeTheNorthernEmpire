@@ -781,6 +781,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9383383170472b4ca8bfe8d9b400a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScrollScale: 0.5
+  tracking: {fileID: 0}
 --- !u!1001 &1331056880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1207,11 +1209,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 114407388389726528, guid: 7431be017468e024e9c57a425530698a,
-        type: 3}
-      propertyPath: respawnPos.x
-      value: -7.7
-      objectReference: {fileID: 0}
     - target: {fileID: 114628916320231860, guid: 7431be017468e024e9c57a425530698a,
         type: 3}
       propertyPath: JumpSpeed
@@ -1221,6 +1218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: JumpCoolDown
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114407388389726528, guid: 7431be017468e024e9c57a425530698a,
+        type: 3}
+      propertyPath: respawnPos.x
+      value: -7.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7431be017468e024e9c57a425530698a, type: 3}
