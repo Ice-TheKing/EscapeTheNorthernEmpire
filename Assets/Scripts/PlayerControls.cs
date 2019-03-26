@@ -69,6 +69,7 @@ public class PlayerControls : MonoBehaviour
                 var direction = Quaternion.AngleAxis(angle, Vector3.forward);
                 var bullet = Instantiate(ForceShot, spawnPosition, direction);
                 Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+                Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<CapsuleCollider2D>());
 
                 // set animator to trigger the push animation
                 anim.SetTrigger("Push");

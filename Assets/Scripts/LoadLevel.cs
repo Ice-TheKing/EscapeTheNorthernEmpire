@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class LoadLevel : MonoBehaviour {
 
+    public string levelName;
 	// Use this for initialization
 	void Start () {
 		
@@ -22,7 +23,7 @@ public class LoadLevel : MonoBehaviour {
             if (collision.gameObject.GetComponent<PlayerControls>().intelCollected)
             {
                 //load next level (need to change, only one level currently)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(levelName);
             }
         }
     }
