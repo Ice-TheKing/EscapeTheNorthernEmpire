@@ -21,6 +21,7 @@ public class PlayerControls : MonoBehaviour
     public bool intelCollected = false;
 
     public Bullet ForceShot;
+    public AudioSource magicsound;
 
     Rigidbody2D rb;
 
@@ -32,6 +33,7 @@ public class PlayerControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        magicsound.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -78,6 +80,7 @@ public class PlayerControls : MonoBehaviour
 
                 // set animator to trigger the push animation
                 anim.SetTrigger("Push");
+                magicsound.Play();
             }
         }
 

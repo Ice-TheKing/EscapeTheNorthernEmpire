@@ -13,6 +13,7 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = transform.right * Speed;
     }
 
+
     void Update()
     {
         Lifetime -= Time.deltaTime;
