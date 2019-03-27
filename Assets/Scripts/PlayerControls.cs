@@ -20,6 +20,8 @@ public class PlayerControls : MonoBehaviour
 
     public bool intelCollected = false;
 
+    private PauseController pauser;
+
     public Bullet ForceShot;
     public AudioSource magicsound;
 
@@ -33,12 +35,15 @@ public class PlayerControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        magicsound.GetComponent<AudioSource>();
+        pauser = GetComponent<PauseController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // if we're paused, ignore input, don't change cooldowns, etc.
+        if (pauser.IsPaused) return;
+
         //check cool downs and decrease them as necessary
         if(jumpCDLeft > 0)
         {

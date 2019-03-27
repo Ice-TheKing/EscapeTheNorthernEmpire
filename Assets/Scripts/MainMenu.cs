@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
     public void StartGame()
     {
         SceneManager.LoadScene("level_1");
     }
 
-    // Update is called once per frame
-     public void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
