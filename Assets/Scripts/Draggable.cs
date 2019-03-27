@@ -1,16 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Draggable : MonoBehaviour
 {
-    public float PullForceMultiplier = 5;
     public float DragWhilePulling = 5;
     public float AngularDragWhilePulling = 5;
+    public PlayerControls Player;
 
     private Rigidbody2D rb;
 
+    private float PullForceMultiplier;
     private bool dragging = false;
     // you can click and drag from any point in an object, so we track where in the object
     // you clicked and drag from that point
@@ -24,6 +26,15 @@ public class Draggable : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (Player == null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
+            if (Player == null)
+            {
+                throw new NullReferenceException("Player was not specified and no object with Player tag found");
+            }
+        }
+        PullForceMultiplier = Player.PullStrength;
     }
 
     // Update runs BEFORE OnMouse{Up,Down}, so we need to make sure to code for that
@@ -60,7 +71,7 @@ public class Draggable : MonoBehaviour
     void OnMouseUp()
     {
         rb.drag = oldDrag;
-        rb.angularDrag = AngularDragWhilePulling;
+        rb.angularDrag = oldAngularDrag;
         dragging = false;
     }
 }

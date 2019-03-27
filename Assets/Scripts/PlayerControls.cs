@@ -13,8 +13,10 @@ public class PlayerControls : MonoBehaviour
     public float JumpCoolDown = 0.5f;
     public float ShotCoolDown = 0.5f;
 
-    private float jumpCoolDown = 0.0f;
-    private float shotCoolDown = 0.0f;
+    public float PullStrength = 200;
+
+    private float jumpCDLeft = 0.0f;
+    private float shotCDLeft = 0.0f;
 
     public bool intelCollected = false;
 
@@ -36,30 +38,30 @@ public class PlayerControls : MonoBehaviour
     void Update()
     {
         //check cool downs and decrease them as necessary
-        if(jumpCoolDown > 0)
+        if(jumpCDLeft > 0)
         {
-            jumpCoolDown -= Time.deltaTime;
+            jumpCDLeft -= Time.deltaTime;
         } else {
             // jump is over so stop the animation
             anim.SetBool("Jumping", false);
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
             {
                 rb.AddForce(Vector2.up * BASIC_SCALING_FACTOR * JumpSpeed);
-                jumpCoolDown = JumpCoolDown;
+                jumpCDLeft = JumpCoolDown;
 
                 // start jumping animation
                 anim.SetBool("Jumping", true);
             }
         }
 
-        if (shotCoolDown > 0)
+        if (shotCDLeft > 0)
         {
-            shotCoolDown -= Time.deltaTime;
+            shotCDLeft -= Time.deltaTime;
         } else
         {
             if (Input.GetMouseButtonDown(1))
             {
-                shotCoolDown = ShotCoolDown;
+                shotCDLeft = ShotCoolDown;
                 Vector2 spawnPosition = transform.position;
                 spawnPosition.y += .2f;
 
@@ -68,8 +70,11 @@ public class PlayerControls : MonoBehaviour
                 var angle = Mathf.Atan2(relativeTarget.y, relativeTarget.x) * Mathf.Rad2Deg;
                 var direction = Quaternion.AngleAxis(angle, Vector3.forward);
                 var bullet = Instantiate(ForceShot, spawnPosition, direction);
-                Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-                Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), GetComponent<CapsuleCollider2D>());
+                var bCollider = bullet.GetComponent<Collider2D>();
+                foreach (var collider in GetComponents<Collider2D>())
+                {
+                    Physics2D.IgnoreCollision(bCollider, collider);
+                }
 
                 // set animator to trigger the push animation
                 anim.SetTrigger("Push");
@@ -97,4 +102,3 @@ public class PlayerControls : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 }
-
